@@ -1,0 +1,35 @@
+<h1 class="text-3xl text-center p-6 "> <button [routerLink]="'/'">Task Management App using Angular</button></h1>
+
+<p class="text-xl text-center text-red-500 p-2"> </p>
+
+<table class="table-auto w-3/4 mx-auto border border-separate shadow-md">
+    <thead>
+        <tr>
+            <th class="border border-slate-600">Title</th>
+            <th class="border border-slate-600">Due Date</th>
+            <th class="border border-slate-600">Status</th>
+            <th class="border border-slate-600">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of taskList">
+            <td class="border">{{item.title}} </td>
+            <td class="border">{{item.date}}</td>
+            <td class="border" *ngIf="item.active">Pending</td>
+            <td class="border" *ngIf="!item.active"></td>
+
+            <td class="border text-center"><a class="px-4" [routerLink]="'/edit-task/'+item.id"> Edit </a> |
+            <button class="px-4" (click)="deleteList(item.id)">Delete</button> |
+            <input type="checkbox" name="done" id="done" class="px-4" (click)="onCheckBoxClick(item)">
+            <label for="done">Mark as Done</label>
+            </td>
+
+            <button class="ml-8 px-4 button bg-blue-300 rounded-full" [routerLink]="'/task-details/'+item.id"> View Task Details</button>
+        </tr>
+    </tbody>
+</table>
+
+<div class="flex flex-col items-center justify-center">
+    <button class="p-4 m-4 button rounded-full bg-blue-400" [routerLink]="'/create-task'">Create New Task</button>
+</div>

@@ -1,0 +1,37 @@
+<h1 class="text-3xl text-center p-6 "> <button [routerLink]="'/'">Task Management App using Angular</button></h1>
+
+<h2 class="text-2xl text-center">Create a new Task</h2>
+
+<p class="text-xl text-center text-green-500 p-2">{{taskAddMsg}} </p>
+
+<div class="w-1/2 mx-auto mt-4">
+    <form #createTask="ngForm"(ngSubmit)="taskCreate(createTask.value);createTask.resetForm()"           class="flex flex-col" >
+        <div>
+            <div class="flex p-2">
+                <label for="title" class="w-1/2 text-lg">Task Title:</label>
+                <input type="text" id="title" placeholder="Enter Task Title" ngModel name="title" #title="ngModel" required minlength="3" maxlength="20" class="border px-20 text-center">
+            </div>
+            <p class="flex justify-center"> <span *ngIf="title.touched && title.invalid" class="text-red-500">Please enter a Title</span></p>
+        </div>
+
+
+        <div>
+            <div class="flex p-2">
+                <label for="desc" class="w-1/2 text-lg">Task Details:</label>
+                <textarea id="desc" placeholder="Enter Complete Task description" ngModel name="desc" #desc="ngModel" required minlength="6" class="border px-20 text-center"> </textarea>
+            </div>
+            <p class="flex justify-center"> <span *ngIf="desc.touched && desc.invalid" class="text-red-500">Please enter complete task description</span></p>
+        </div>
+
+        <div>
+            <div class="flex p-2">
+                <label for="date" class="w-1/2 text-lg">Due date:</label>
+                <input type="date" id="date" ngModel name="date" #date="ngModel" required [min]="minDate" class="border px-28">
+            </div>
+            <p class="flex justify-center"> <span *ngIf="date.touched && date.invalid" class="text-red-500">Please enter a due date</span></p>
+        </div>
+
+        <button [disabled]="createTask.invalid" class="w-1/4 mx-auto rounded-full bg-green-300 p-2 mt-2">Submit</button>
+    </form>
+</div>
+
