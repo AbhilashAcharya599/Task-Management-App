@@ -1,1 +1,13 @@
-<p>task-details works!</p>
+<h1 class="text-3xl text-center p-6 "> <button [routerLink]="'/'">Task Management App using Angular</button></h1>
+
+<h2 class="text-2xl text-center">Task Details</h2>
+
+<div *ngIf="taskData" class="text-center mt-8">
+    <h3 class="text-xl"><strong>Title:</strong>{{taskData.title}}</h3>
+    <h4 class="text-lg"><strong>Description:</strong>{{taskData.desc}} </h4>
+    <h4 class="text-lg"><strong>Due Date:</strong>{{taskData.date}} </h4>
+    <h4 class="text-lg" *ngIf="taskData.active"><strong>Status:</strong>Pending</h4>
+    <h4 class="text-lg" *ngIf="!taskData.active"><strong>Status:</strong>Completed</h4>
+</div>
+
+

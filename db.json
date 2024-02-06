@@ -1,1 +1,24 @@
-{}
+{
+  "tasks": [
+    {
+      "title": "Learn Angular",
+      "desc": "Learn Angular by making mini projects",
+      "date": "2024-02-08",
+      "id": 1
+    },
+    {
+      "title": "Learn Angular and react",
+      "desc": "Learn Angular by making projects after projects",
+      "date": "2024-02-08",
+      "active": true,
+      "id": 3
+    },
+    {
+      "title": "acek.ek.",
+      "desc": "qfelenlef",
+      "date": "2024-02-09",
+      "active": true,
+      "id": 4
+    }
+  ]
+}
