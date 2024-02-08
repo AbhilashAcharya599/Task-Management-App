@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { waitForAsync } from '@angular/core/testing';
 import { TasksService } from 'src/app/Services/tasks.service';
 import { taskType } from 'src/app/taskDataType';
 
@@ -36,7 +37,12 @@ export class TaskListComponent implements OnInit {
     }, 3000);
   }
 
-  onCheckBoxClick(item:taskType){
-    item.active= !item.active;
+  changeStatus(item:taskType){
+    item.active=!item.active;
+    this.list.updateTask(item).subscribe((result)=>{
+      if(result){
+        console.warn("Status changed");    
+      }
+    })
   }
 }
