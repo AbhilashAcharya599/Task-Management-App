@@ -1,15 +1,21 @@
 <h1 class="text-3xl text-center p-6 text-blue-700 font-bold"> <button [routerLink]="'/'">Task Management App using Angular</button></h1>
 
-<div class="bg-slate-100 mx-auto w-1/2 rounded-3xl mt-10 p-10 shadow-xl">
+<div class="bg-slate-100 mx-auto w-4/5 md:w-1/2 rounded-3xl mt-10 p-10 shadow-xl">
 
     <h2 class="text-2xl text-center font-semibold">Task Details</h2>
     
     <div *ngIf="taskData" class="text-center mt-8">
         <h3 class="text-xl font-medium p-2"><strong>Title:</strong>{{taskData.title}}</h3>
-        <h4 class="text-lg"><strong>Description:</strong>{{taskData.desc}} </h4>
-        <h4 class="text-lg"><strong>Due Date:</strong>{{taskData.date}} </h4>
-        <h4 class="text-lg" *ngIf="taskData.active"><strong>Status: </strong>Pending</h4>
-        <h4 class="text-lg" *ngIf="!taskData.active"><strong>Status: </strong>Completed</h4>
+        <h4 class="text-lg p-1"><strong>Description:</strong>{{taskData.desc}} </h4>
+        <h4 class="text-lg p-1"><strong>Due Date:</strong>{{taskData.date}} </h4>
+        <h4 *ngIf="taskData.active == true; then ifBlock else elseBlock"></h4>
+        <ng-template #ifBlock>
+           <h4 class="text-lg p-1"><strong>Status: </strong>Pending </h4>
+        </ng-template>
+
+        <ng-template #elseBlock>
+            <h4 class="text-lg p-1"><strong>Status: </strong>Completed</h4>
+         </ng-template>
     </div>
     
 </div>

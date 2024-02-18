@@ -28,6 +28,7 @@ export class EditTaskComponent implements OnInit {
     console.warn(data);
     if(this.taskData){
       data.id=this.taskData.id;
+      data.active=this.taskData.active;
     }
     this.task.updateTask(data).subscribe((result)=>{
       if(result){

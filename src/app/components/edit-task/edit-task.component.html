@@ -1,10 +1,10 @@
-<h1 class="text-3xl text-center p-6 text-blue-700"> <button [routerLink]="'/'">Task Management App using Angular</button></h1>
+<h1 class="text-3xl text-center p-6 text-blue-700 font-bold"> <button [routerLink]="'/'">Task Management App using Angular</button></h1>
 
 <h2 class="text-2xl text-center">Edit the Task</h2>
 
 <p class="text-xl text-center text-green-500 p-2">{{taskEditMsg}} </p>
 
-<div class="w-1/2 mx-auto mt-4">
+<div class="w-4/5 md:w-1/2 mx-auto mt-4">
     <form #editTask="ngForm"(ngSubmit)="submit(editTask.value)" class="flex flex-col" >
         <div>
             <div class="flex p-2">
@@ -18,7 +18,7 @@
         <div>
             <div class="flex p-2">
                 <label for="desc" class="w-1/2 text-lg">Task Details:</label>
-                <textarea id="desc" placeholder="Enter Complete Task description" ngModel="{{taskData?.desc}}" name="desc" #desc="ngModel" required minlength="6" class="border text-center w-1/2"> </textarea>
+                <textarea id="desc" placeholder="Enter Complete Task description" ngModel="{{taskData?.desc}}" name="desc" #desc="ngModel" required minlength="6" rows="4" class="border text-center w-1/2"> </textarea>
             </div>
             <p class="flex justify-center"> <span *ngIf="desc.touched && desc.invalid" class="text-red-500">Please enter complete task description</span></p>
         </div>
@@ -31,7 +31,7 @@
             <p class="flex justify-center"> <span *ngIf="date.touched && date.invalid" class="text-red-500">Please enter a due date</span></p>
         </div>
 
-        <button [disabled]="editTask.invalid" class="w-1/4 mx-auto rounded-full bg-green-300 p-2 mt-2">Submit</button>
+        <button [disabled]="editTask.invalid" class="w-1/2 md:w-1/4 mx-auto rounded-xl md:rounded-full bg-green-200 hover:bg-green-300 hover:shadow-2xl hover:scale-105 p-2 mt-2 font-semibold">Submit</button>
     </form>
 </div>
 

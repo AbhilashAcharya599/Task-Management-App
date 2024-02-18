@@ -38,7 +38,7 @@ export class TaskListComponent implements OnInit {
   }
 
   changeStatus(item:taskType){
-    item.active=!item.active;
+    item.active= !item.active;
     this.list.updateTask(item).subscribe((result)=>{
       if(result){
         console.warn("Status changed");    

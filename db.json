@@ -1,24 +1,38 @@
 {
   "tasks": [
     {
-      "title": "Learn Angular",
-      "desc": "Learn Angular by making mini projects",
-      "date": "2024-02-08",
-      "active": false,
-      "id": 1
-    },
-    {
-      "title": "Learn Angular and react",
-      "desc": "Learn Angular by making projects after projects",
-      "date": "2024-02-08",
-      "active": true,
-      "id": 3
-    },
-    {
-      "title": "acek.ek.",
-      "desc": "qfelenlef",
-      "date": "2024-02-14",
+      "title": "Call friend",
+      "desc": "Discuss",
+      "date": "2024-02-20",
       "id": 4,
+      "active": false
+    },
+    {
+      "title": "watch movie",
+      "desc": "watch trending and high rated movies",
+      "date": "2024-02-27",
+      "id": 5,
+      "active": false
+    },
+    {
+      "title": "Complete courses",
+      "desc": "Complete the started courses in time",
+      "date": "2024-02-18",
+      "active": true,
+      "id": 6
+    },
+    {
+      "title": "Drawing",
+      "desc": "complete one drawing ",
+      "date": "2024-02-24",
+      "id": 7,
+      "active": true
+    },
+    {
+      "title": "Play cricket",
+      "desc": "play with friends in the free time",
+      "date": "2024-02-24",
+      "id": 8,
       "active": true
     }
   ]
